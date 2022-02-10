@@ -1,3 +1,3 @@
-DO NOT STEAL MY CODE.
+A Simple Image Slide Code.
 
-MY JAVASCRIPT JOURNEY IN 2022
+Used array to create an image slide.

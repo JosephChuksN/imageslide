@@ -7,14 +7,14 @@ i = 0;
 
 
  const slidenxt = () =>{
-   console.log(`images/${slides[i]}`)
+  let img = document.getElementById("imgslide").getAttribute("src");
    for(i = 0; i < slides.length; i++)
-      if( slides == i){
-        s = document.getElementById("imgslide").setAttribute( "src", (`images/${slides[i]}`));
-       return s;
-      } else{
-      return  alert('i no work');
+      if(img == "images/"+slides[i]){
+        let nxtImg = (i < slides.length-1 ? "images/"+slides[i+1] : "images/"+slides[0])
+        s = document.getElementById("imgslide").setAttribute( "src", nxtImg);
+      
       }
+      return s;
  } 
 
 function slideprv(){
