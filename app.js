@@ -1,45 +1,34 @@
 const slides = ["crash.png", "kick.png", "snare.png","tom1.png","tom2.png", "tom3.png", "tom4.png" ];
-let i;
-i = 0;
- let x;
- let s;
- s = document.getElementById("imgslide");
+let nxtBtnIteration;
+xtBtnIteration = 0;
+ let prvBtnIteration;
+ let imgSource;
+ let output;
+ imgSource = document.getElementById("imgslide");
 
 
  const slidenxt = () =>{
-  let img = document.getElementById("imgslide").getAttribute("src");
-   for(i = 0; i < slides.length; i++)
-      if(img == "images/"+slides[i]){
-        let nxtImg = (i < slides.length-1 ? "images/"+slides[i+1] : "images/"+slides[0])
-        s = document.getElementById("imgslide").setAttribute( "src", nxtImg);
+  let img = imgSource.getAttribute("src");
+   for(nxtBtnIteration = 0; nxtBtnIteration < slides.length; nxtBtnIteration++)
+      if(img == "images/"+slides[nxtBtnIteration]){
+        let nxtImg = (nxtBtnIteration < slides.length-1 ? "images/"+slides[nxtBtnIteration+1] : "images/"+slides[0])
+        output = imgSource.setAttribute( "src", nxtImg);
       
       }
-      return s;
+      return output;
  } 
 
 function slideprv(){
- let z;
- let img = document.getElementById("imgslide").getAttribute("src");
+ let prvOutput;
+ let img = imgSource.getAttribute("src");
 
-    for(x = 6; x >= 0; x--){
-      if(img=="images/"+slides[x]){
-        let prvImg = (x>0 ? "images/"+slides[x-1] :"images/"+slides[slides.length-1] );
-        z  =  document.getElementById("imgslide").setAttribute("src", prvImg);
+    for( prvBtnIteration = 6;  prvBtnIteration >= 0;  prvBtnIteration--){
+      if(img=="images/"+slides[ prvBtnIteration]){
+        let prvImg = ( prvBtnIteration>0 ? "images/"+slides[ prvBtnIteration-1] :"images/"+slides[slides.length-1] );
+        prvOutput  =  imgSource.setAttribute("src", prvImg);
         break
-    //  console.log(prvImg);
       }
     }
 
-    return z;
+    return prvOutput;
 }
-
-//var imgArray = ["crash.png", "kick.png", "snare.png","tom1.png","tom2.png", "tom3.png", "tom4.png"];
-//for (i = 0; i < 7; i++) {
-  //  imgArray[i] = new Image();
-    //imgArray[i].src = imgArray[i];
-//}
-
-//function slidenxt() {
-  //  var images = imgArray.map(img => img.outerHTML).join('');
-    //document.getElementById("imgslide").innerHTML = images;
-//}
