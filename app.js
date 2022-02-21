@@ -7,7 +7,7 @@ xtBtnIteration = 0;
  imgSource = document.getElementById("imgslide");
 
 
- const slidenxt = () =>{
+ function slidenxt(){
   let img = imgSource.getAttribute("src");
    for(nxtBtnIteration = 0; nxtBtnIteration < slides.length; nxtBtnIteration++)
       if(img == "images/"+slides[nxtBtnIteration]){
@@ -17,6 +17,7 @@ xtBtnIteration = 0;
       }
       return output;
  } 
+ window.onload =setInterval(slidenxt, 2000 ) ;
 
 function slideprv(){
  let prvOutput;
